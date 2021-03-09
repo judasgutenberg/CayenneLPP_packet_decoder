@@ -19,8 +19,12 @@ $data = $_REQUEST['data'];
  * @email ptiwatthanont@gmail.com
  * 
  * @link https://htmlcheatsheet.com/js/ 
+ * modified by Gus Mueller to accept hex strings and to correctly handle negative longtitudes like we have in the New World
  */
-// console.log('Node.js version: ' + process.version)
+ * 
+ * @link https://htmlcheatsheet.com/js/ 
+ */
+
  
 /**
  * Byte stream to fixed-point decimal word.
@@ -87,13 +91,13 @@ function decode(payload) {
      *  Analog Output       3203    3       3       2           0.01 Signed
      *  Illuminance Sensor  3301    101     65      2           1 Lux Unsigned MSB
      *  Presence Sensor     3302    102     66      1           1
-     *  Temperature Sensor  3303    103     67      2           0.1 °C Signed MSB
+     *  Temperature Sensor  3303    103     67      2           0.1 Â°C Signed MSB
      *  Humidity Sensor     3304    104     68      1           0.5 % Unsigned
      *  Accelerometer       3313    113     71      6           0.001 G Signed MSB per axis
      *  Barometer           3315    115     73      2           0.1 hPa Unsigned MSB
-     *  Gyrometer           3334    134     86      6           0.01 °/s Signed MSB per axis
-     *  GPS Location        3336    136     88      9           Latitude  : 0.0001 ° Signed MSB
-     *                                                          Longitude : 0.0001 ° Signed MSB
+     *  Gyrometer           3334    134     86      6           0.01 Â°/s Signed MSB per axis
+     *  GPS Location        3336    136     88      9           Latitude  : 0.0001 Â° Signed MSB
+     *                                                          Longitude : 0.0001 Â° Signed MSB
      *                                                          Altitude  : 0.01 meter Signed MSB
      */    
     var sensor_types = { 
